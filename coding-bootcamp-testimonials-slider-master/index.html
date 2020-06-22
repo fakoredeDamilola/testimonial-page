@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      .top {
+        width: 100%;
+        height: 400px;
+        background-image: url("./images/pattern-bg.svg");
+        background-size: 80% 100%;
+        background-repeat: no-repeat;
+        background-position: left top;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .bottom {
+        margin-top: 20px;
+        width: 100%;
+        height: 380px;
+        background-image: url("./images/pattern-quotes.svg"),
+          url("./images/pattern-curve.svg");
+        background-position: center top, bottom left;
+        background-size: 90px, 300px;
+        background-repeat: no-repeat;
+        padding: 50px 40px;
+        text-align: center;
+        font-size: 20px;
+        color: hsl(240, 18%, 77%);
+      }
+      img {
+        width: 80%;
+        height: 350px;
+      }
+      .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .buttons {
+        position: absolute;
+        width: 90px;
+        height: 40px;
+        border-radius: 20px;
+        display: flex;
+        justify-content: space-between;
+        background: white;
+
+        top: 100%;
+        left: 50%;
+        margin-left: -50px;
+
+        box-sizing: border-box;
+        margin-top: -25px;
+        box-shadow: -20px 10px 60px hsl(228, 45%, 44%);
+      }
+      .btn-img {
+        width: 13px;
+        height: 13px;
+      }
+      .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .name {
+        margin-top: -10px;
+      }
+      .span {
+        color: hsl(240, 38%, 20%);
+        display: block;
+      }
+
+      @media (min-width: 400px) {
+        .grid {
+          width: 400px;
+          margin: 0 auto;
+        }
+      }
+      @media (min-width: 1000px) {
+        .grid {
+          width: 1000px;
+          display: flex;
+          flex-direction: row-reverse;
+        }
+        .top {
+          background-size: 80% 100%;
+          background-position: center top;
+          height: 430px;
+          width: 600px;
+          /* background: blue; */
+        }
+        .bottom {
+          height: 380px;
+          margin-top: 100px;
+          text-align: left;
+          width: 700px;
+          margin-right: -200px;
+          z-index: 50;
+          /* background-color: red; */
+
+          padding-left: 120px;
+          background-size: 90px, 400px;
+        }
+
+        img {
+          width: 350px;
+          height: 350px;
+        }
+        .span {
+          display: inline-block;
+          padding-top: 40px;
+        }
+        .buttons {
+          margin-left: -120px;
+          z-index: 100;
+        }
+        .name {
+          margin-top: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- “ I’ve been interested in coding for a while but never taken the jump, until now. 
+  I couldn’t recommend this course enough. I’m now in the job of my dreams and so 
+  excited about the future. ”
+
+  Tanya Sinclair
+  UX Engineer
+
+  “ If you want to lay the best foundation possible I’d recommend taking this course. 
+  The depth the instructors go into is incredible. I now feel so confident about 
+  starting up as a professional developer. ”
+
+  John Tarkpor
+  Junior Front-end Developer -->
+    <div class="grid">
+      <div class="top">
+        <div class="image">
+          <img src="./images/image-tanya.jpg" alt="" id="img" />
+          <div class="buttons">
+            <div class="btn">
+              <img
+                src="./images/icon-prev.svg"
+                alt=""
+                class="btn-img"
+                id="btn-left"
+              />
+            </div>
+            <div class="btn">
+              <img
+                src="./images/icon-next.svg"
+                alt=""
+                class="btn-img"
+                id="btn-right"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="name">
+          <div class="text">
+            "I’ve been interested in coding for a while but never taken the
+            jump, until now. I couldn’t recommend this course enough. I’m now in
+            the job of my dreams and so excited about the future."
+          </div>
+
+          <span class="span">Tanya Sinclair</span>
+
+          <span class="job">
+            UX Engineer
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Fakorede Damilola</a>.
+    </div>
+    <script>
+      let array = [
+        {
+          id: 0,
+          img: "./images/image-tanya.jpg",
+          text:
+            '"I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future."',
+          name: "Tanya Sinclair",
+          job: "UX Engineer",
+        },
+        {
+          id: 1,
+          img: "./images/image-john.jpg",
+          text:
+            '"If you want to lay the best foundation possible I’d recommend taking this course.  The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer."',
+          name: "John Tarkpor",
+          job: "Junior Front-end Developer",
+        },
+      ];
+      let btnLeft = document.getElementById("btn-left"),
+        img = document.getElementById("img"),
+        text = document.querySelector(".text"),
+        span = document.querySelector(".span"),
+        job = document.querySelector(".job");
+      let btnRight = document.getElementById("btn-right");
+      let count = 0;
+      btnRight.addEventListener("click", function () {
+        count == 1 ? count-- : count++;
+
+        img.src = array[count].img;
+        text.innerHTML = array[count].text;
+        job.innerHTML = array[count].job;
+        span.innerHTML = array[count].name;
+      });
+      btnLeft.addEventListener("click", function () {
+        count == 0 ? count++ : count--;
+
+        img.src = array[count].img;
+        text.innerHTML = array[count].text;
+        job.innerHTML = array[count].job;
+        span.innerHTML = array[count].name;
+      });
+    </script>
+  </body>
+</html>
